@@ -1,0 +1,5 @@
+*.log
+*.pyc
+*.db
+*.sqlite
+.DS_Store
