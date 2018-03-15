@@ -10,12 +10,13 @@ import os
 def setup(pref_lang, path):
     tool = pyocr.get_available_tools()[0]
     lang = pref_lang if pref_lang in tool.get_available_languages() else "eng"
+    print("Will use lang '%s'" % (lang))
 
     req_image = []
     result_dict = []
 
     image_pdf = Image(filename=path, resolution=300)
-    image_pdf.save(filename=os.path.abspath("./temp.png"))
+    image_pdf.save(filename=os.path.abspath("./temp-1.png"))
     image_jpeg = image_pdf.convert('jpeg')
 
     for img in image_jpeg.sequence:
@@ -37,7 +38,7 @@ def setup(pref_lang, path):
     return result_dict
 
 def visualize_result(result_dict):
-    for z in range(0,result_dict[len(result_dict)-1]['page']):
+    for z in range(0,result_dict[len(result_dict)-1]['page']+1):
         im = PI.open(os.path.abspath("./temp-" + str(z) + ".png"))
         draw = ImageDraw.Draw(im)
         for x in result_dict:
@@ -49,7 +50,7 @@ def visualize_result(result_dict):
 def search(result_dict, search_value):
     offset = 85
     for x in result_dict:
-        if search_value.lower().decode('utf-8') in x['text'].lower():
+        if search_value.lower() in x['text'].lower():
             search_x = (x['pos'][0][0]+x['pos'][1][0])/2
             search_y = (x['pos'][0][1]+x['pos'][1][1])/2
             for x in result_dict:
@@ -70,3 +71,7 @@ def table_search(result_dict):
             if x['pos'][0][0] > column_limits[column] and x['pos'][0][0] < column_limits[column+1] and x['pos'][0][1] > row_limits[0] and x['pos'][0][1] < row_limits[1]:
                 column_result['column'+str(column)].append(x['text'])
     return column_result
+
+result = setup("swe", "/Users/jarl-ottosiikasmaa/Downloads/897249.pdf")
+visualize_result(result)
+search(result, "fakturanr")
