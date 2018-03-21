@@ -169,7 +169,7 @@ class Invoice():
             item['total'] = item['price_per'] * item['count']
             self.total = self.total + item['price_per'] * item['count']
 
-    def pdf_invoice_creator(self, TEMPLATE_HTML="/Users/jarl-ottosiikasmaa/Documents/Projects/lasku/Fakturapohja.htm", OUTPUT_FILE_NAME="/Users/jarl-ottosiikasmaa/Documents/Projects/lasku/out.pdf"):
+    def pdf_invoice_creator(self, TEMPLATE_HTML, OUTPUT_FILE_NAME):
         self.validate_input()
         if (len(self.errors) != 0):
             print ("\n".join(self.errors))

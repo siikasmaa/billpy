@@ -20,6 +20,16 @@ test_values = {
         'product':'Test',
         'price_per':5.00,
         'count':10
+    },
+    {
+        'product':'Test2',
+        'price_per':6.76,
+        'count':32
+    },
+    {
+        'product':'Test3',
+        'price_per':2.13,
+        'count':2
     }]
 }
 
@@ -28,10 +38,10 @@ class TestInvoice(unittest.TestCase):
         inv = Invoice()
         inv.load_from_data(test_values)
         inv.validate_input()
+        test_invoice = "test_invoice.html"
         self.assertEqual(len(inv.errors), 0, msg="\n"+"\n".join(inv.errors))
         self.assertEqual("446111122223333440000000000000000000000012312312180323", inv.code_creator(), msg="\n"+"\n".join(inv.errors))
-        self.assertNotEqual(inv.pdf_invoice_creator(), None, msg="\n"+"\n".join(inv.errors))
-        self.assertTrue(inv.pdf_invoice_creator(), msg="\n"+"\n".join(inv.errors))
+        self.assertTrue(inv.pdf_invoice_creator(test_invoice, "./output.pdf"), msg="\n"+"\n".join(inv.errors))
 
     def test_no_data(self):
         inv = Invoice()
@@ -77,7 +87,7 @@ class TestInvoice(unittest.TestCase):
         inv = Invoice()
         inv.load_from_data(test_values)
         inv.total_calculate()
-        self.assertEqual(inv.total, 50.00, msg="\n"+"\n".join(inv.errors))
+        self.assertEqual(inv.total, 270.58, msg="\n"+"\n".join(inv.errors))
 
 def main():
     unittest.main()
