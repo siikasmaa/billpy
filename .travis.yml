@@ -1,7 +1,6 @@
 language: python
 before_install:
-  - sudo apt-get install -y xvfb
-  - sudo apt-get install -y wkhtmltopdf
+  - sudo apt-get install -y xvfb libfontconfig wkhtmltopdf
 python:
   - "3.6"
 install:
