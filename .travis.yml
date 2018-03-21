@@ -1,6 +1,8 @@
 language: python
 before_install:
-  - sudo apt-get install -y xvfb libfontconfig wkhtmltopdf
+  - wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+  - tar -xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+  - export PATH=$PATH:$PWD/wkhtmltox/bin
 python:
   - "3.6"
 install:
