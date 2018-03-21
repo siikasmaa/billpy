@@ -1,5 +1,6 @@
 language: python
 before_install:
+  - sudo apt-get install -y xvfb
   - sudo apt-get install -y wkhtmltopdf
 python:
   - "3.6"
