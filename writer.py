@@ -9,6 +9,7 @@ from PyPDF2 import PdfFileMerger, PdfFileReader
 import config
 
 class Invoice():
+    DATEFORMAT = "%d.%m.%Y"
     targets = {
         "bic":"",
         "iban":"",
@@ -23,7 +24,6 @@ class Invoice():
         "payer_adress_3":"",
         "total":""
     }
-    DATEFORMAT = "%d.%m.%Y"
 
     def __init__(self):
         self.errors = []
