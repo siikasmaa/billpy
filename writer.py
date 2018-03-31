@@ -184,7 +184,7 @@ class Invoice():
             for item in parsed_page.findAll(id=target):
                 if type(self.__dict__[target]) == float:
                     item.string = format(self.__dict__[target], '.2f')
-                if type(self.__dict__[target]) == datetime.datetime:
+                elif type(self.__dict__[target]) == datetime.datetime:
                     item.string = str(self.__dict__[target].strftime('%d.%m.%Y'))
                 else:
                     item.string = str(self.__dict__[target])
