@@ -71,7 +71,3 @@ def table_search(result_dict):
             if x['pos'][0][0] > column_limits[column] and x['pos'][0][0] < column_limits[column+1] and x['pos'][0][1] > row_limits[0] and x['pos'][0][1] < row_limits[1]:
                 column_result['column'+str(column)].append(x['text'])
     return column_result
-
-result = setup("swe", "/Users/jarl-ottosiikasmaa/Downloads/897249.pdf")
-visualize_result(result)
-search(result, "fakturanr")
