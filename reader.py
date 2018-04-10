@@ -1,11 +1,11 @@
+import io
+import re
+import os
 from wand.image import Image
 from PIL import Image as PI
 from PIL import ImageDraw
 import pyocr
 import pyocr.builders
-import io
-import re
-import os
 
 def setup(pref_lang, path):
     tool = pyocr.get_available_tools()[0]
@@ -39,7 +39,7 @@ def setup(pref_lang, path):
 
 def visualize_result(result_dict):
     for z in range(0,result_dict[len(result_dict)-1]['page']+1):
-        im = PI.open(os.path.abspath("./temp-" + str(z) + ".png"))
+        im = PI.open(os.path.abspath("./temp-1-" + str(z) + ".png"))
         draw = ImageDraw.Draw(im)
         for x in result_dict:
             if x['page'] == z:
@@ -60,9 +60,9 @@ def search(result_dict, search_value):
                     return x['text']
 
 def table_search(result_dict):
-    column_limits = (0,304,522,1130,1480,1700,1980,3000)
+    column_limits = (0, 304, 522, 1130, 1480, 1700, 1980, 3000)
     column_result = {}
-    row_limits_page0 = (1180,3190)
+    row_limits_page0 = (1180, 3190)
     row_limits_else = (590, 3170)
     for column in range(len(column_limits)-1):
         column_result['column'+str(column)] = []
