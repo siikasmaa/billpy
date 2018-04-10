@@ -186,7 +186,7 @@ class Invoice():
 
     def pdf_invoice_creator(self, template_html, output_file_name):
         self.validate_input()
-        if not self.errors:
+        if self.errors:
             print("\n".join(self.errors))
             return
 
