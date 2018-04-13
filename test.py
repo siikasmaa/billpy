@@ -39,7 +39,7 @@ class TestInvoice(unittest.TestCase):
         inv = Invoice()
         inv.load_from_data(test_values)
         inv.validate_input()
-        test_invoice = "test_invoice.html"
+        test_invoice = "test_invoice/test_invoice.html"
         self.assertEqual(len(inv.errors), 0, msg="\n"+"\n".join(inv.errors))
         self.assertTrue(inv.pdf_invoice_creator(test_invoice, "./output.pdf"), msg="\n"+"\n".join(inv.errors))
 
