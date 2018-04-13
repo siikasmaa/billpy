@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML invoice template</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <!-- TOP -->
+      <tr class="top">
+        <td class="title">
+          <img src="logo.svg" />
+        </td>
+        <td>Invoice #: <span id="number"></span></td>
+        <tr>
+          <td>Company Name</td>
+          <td>Rererence: <span id="reference"></span></td>
+        </tr>
+        <tr>
+          <td>12345 Sunny Road</td>
+          <td>Date: <span id="date"></span></td>
+        </tr>
+        <tr>
+          <td>Sunnyville 12345 CA</td>
+          <td>Due: <span id="due_date"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>IBAN: <span id="iban"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Message <span id="message"></span></td>
+        </tr>
+      </tr>
+      <!-- EMPTY SPACE -->
+      <tr class="blank_row">
+        <td colspan="3"></td>
+      </tr>
+      <!-- INVOICE PAYER INFORMATION -->
+      <tr class="information">
+        <tr>
+          <td></td>
+          <td id="payer_name"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="payer_adress_1"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="payer_adress_2"></td>
+        </tr>
+      </tr>
+      <!-- PRODUCT TABLE -->
+      <tr class="heading">
+        <td>
+          Item
+        </td>
+        <td>
+          Price
+        </td>
+      </tr>
+      <tr class="item">
+        <td>
+          <span id="1_product"></span>
+        </td>
+        <td>
+          <span id="1_total"></span>
+        </td>
+      </tr>
+      <tr class="item">
+        <td>
+          <span id="2_product"></span>
+        </td>
+        <td>
+          <span id="2_total"></span>
+        </td>
+      </tr>
+      <tr class="item last">
+        <td>
+          <span id="3_product"></span>
+        </td>
+        <td>
+          <span id="3_total"></span>
+        </td>
+      </tr>
+      <!-- PRODUCT TABLE BOTTOM -->
+      <tr class="total">
+        <td></td>
+        <td>
+          <span id="total"></span>
+        </td>
+      </tr>
+    </table>
+    <!-- INVOICE BARCODE -->
+    <div style='padding-top:10px' id='barcode'></div>
+  </div>
+</body>
+
+</html>
