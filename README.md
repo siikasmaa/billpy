@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/siikasmaa/billpy.svg?token=eGWizcfFhAAVAJdsNSUW&branch=master)](https://travis-ci.com/siikasmaa/billpy)
+[![Build Status](https://travis-ci.org/siikasmaa/billpy.svg?branch=master)](https://travis-ci.com/siikasmaa/billpy)
 
 # BillPy
 A simple python module for creating pdf invoices from custom html.
