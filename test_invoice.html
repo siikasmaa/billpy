@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML invoice template</title>
+  <style>
+    .invoice-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+      font-size: 16px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      color: #555;
+    }
+
+    .invoice-box table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      padding: 2px;
+      vertical-align: top;
+    }
+
+    .blank_row
+    {
+    height: 20px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+    }
+
+    .invoice-box table tr td:nth-child(2) {
+      text-align: right;
+    }
+
+    .invoice-box table tr.top table td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.information table td {
+      padding-bottom: 40px;
+    }
+
+    .invoice-box table tr.heading td {
+      background: #eee;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .invoice-box table tr.details td {
+      padding-bottom: 10px;
+    }
+
+    .invoice-box table tr.item td {
+      border-bottom: 1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td {
+      border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+      border-top: 2px solid #eee;
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+      .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .rtl {
+      direction: rtl;
+      font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+
+    .rtl table {
+      text-align: right;
+    }
+
+    .rtl table tr td:nth-child(2) {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <!-- TOP -->
+      <tr class="top">
+        <td class="title">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="al93k4as9h1z" version="1.1" width="91.65" height="59.8" viewBox="0 0 91.65 59.8" style=""><path d="M0,0h91.65h0v0v59.8v0h0h-91.65h0v0v-59.8v0h0z" fill="transparent" stroke-width="6" stroke="#4caf50"/><svg x="21.000000000000007" y="20"><path fill="#4caf50" d="M7.200 3.900L11.400 3.900L11.400 7.050L7.200 7.050L7.200 14.400L7.200 14.400Q7.200 15.720 7.695 16.185L7.695 16.185L7.695 16.185Q8.190 16.650 9.300 16.650L9.300 16.650L11.400 16.500L11.400 19.650L11.400 19.650Q9.870 19.800 7.800 19.800L7.800 19.800L7.800 19.800Q3 19.800 3 15.600L3 15.600L3 7.050L0 7.050L0 3.900L3 3.900L3 0L7.200 0L7.200 3.900ZM26.610 12.750L16.050 12.750L16.050 12.750Q16.200 14.790 17.280 15.720L17.280 15.720L17.280 15.720Q18.360 16.650 20.400 16.650L20.400 16.650L20.400 16.650Q21.360 16.650 22.560 16.455L22.560 16.455L22.560 16.455Q23.760 16.260 24.480 16.080L24.480 16.080L25.200 15.900L25.200 19.050L25.200 19.050Q23.280 19.800 20.100 19.800L20.100 19.800L20.100 19.800Q18.480 19.800 17.070 19.335L17.070 19.335L17.070 19.335Q15.660 18.870 14.505 17.925L14.505 17.925L14.505 17.925Q13.350 16.980 12.675 15.375L12.675 15.375L12.675 15.375Q12 13.770 12 11.700L12 11.700L12 11.700Q12 8.130 14.205 5.865L14.205 5.865L14.205 5.865Q16.410 3.600 19.500 3.600L19.500 3.600L19.500 3.600Q22.800 3.600 24.750 5.670L24.750 5.670L24.750 5.670Q26.700 7.740 26.700 11.100L26.700 11.100L26.610 12.750M19.500 6.750L19.500 6.750L19.500 6.750Q17.970 6.750 17.205 7.590L17.205 7.590L17.205 7.590Q16.440 8.430 16.170 9.900L16.170 9.900L22.740 9.900L22.740 9.900Q22.740 8.370 21.870 7.560L21.870 7.560L21.870 7.560Q21 6.750 19.500 6.750ZM27.600 8.100L27.600 8.100L27.600 8.100Q27.600 6.300 29.295 4.950L29.295 4.950L29.295 4.950Q30.990 3.600 34.200 3.600L34.200 3.600L34.200 3.600Q35.100 3.600 35.925 3.720L35.925 3.720L35.925 3.720Q36.750 3.840 37.110 3.960L37.110 3.960L37.500 4.050L37.500 7.230L37.500 7.230Q35.880 6.750 33.900 6.750L33.900 6.750L33.900 6.750Q31.920 6.750 31.920 8.100L31.920 8.100L31.920 8.100Q31.920 9.090 32.970 9.540L32.970 9.540L32.970 9.540Q35.970 10.950 37.185 12.150L37.185 12.150L37.185 12.150Q38.400 13.350 38.400 15.300L38.400 15.300L38.400 15.300Q38.400 19.800 32.400 19.800L32.400 19.800L32.400 19.800Q31.170 19.800 30.015 19.650L30.015 19.650L30.015 19.650Q28.860 19.500 28.290 19.350L28.290 19.350L27.750 19.200L27.750 16.050L27.750 16.050Q29.850 16.650 32.400 16.650L32.400 16.650L32.400 16.650Q33.210 16.650 33.645 16.350L33.645 16.350L33.645 16.350Q34.080 16.050 34.080 15.600L34.080 15.600L34.080 15.600Q34.080 15 33.420 14.475L33.420 14.475L33.420 14.475Q32.760 13.950 31.230 13.260L31.230 13.260L31.230 13.260Q29.310 12.330 28.455 11.235L28.455 11.235L28.455 11.235Q27.600 10.140 27.600 8.100ZM45.450 3.900L49.650 3.900L49.650 7.050L45.450 7.050L45.450 14.400L45.450 14.400Q45.450 15.720 45.945 16.185L45.945 16.185L45.945 16.185Q46.440 16.650 47.550 16.650L47.550 16.650L49.650 16.500L49.650 19.650L49.650 19.650Q48.120 19.800 46.050 19.800L46.050 19.800L46.050 19.800Q41.250 19.800 41.250 15.600L41.250 15.600L41.250 7.050L38.250 7.050L38.250 3.900L41.250 3.900L41.250 0L45.450 0L45.450 3.900Z"/>
+          </svg>
+        </svg>
+        </td>
+        <td>Invoice #: <span id="number"></span></td>
+        <tr>
+          <td>Company Name</td>
+          <td>Rererence: <span id="reference"></span></td>
+        </tr>
+        <tr>
+          <td>12345 Sunny Road</td>
+          <td>Date: <span id="date"></span></td>
+        </tr>
+        <tr>
+          <td>Sunnyville 12345 CA</td>
+          <td>Due: <span id="due_date"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>IBAN: <span id="iban"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Message <span id="message"></span></td>
+        </tr>
+      </tr>
+      <!-- EMPTY SPACE -->
+      <tr class="blank_row">
+        <td colspan="3"></td>
+      </tr>
+      <!-- INVOICE PAYER INFORMATION -->
+      <tr class="information">
+        <tr>
+          <td></td>
+          <td id="payer_name"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="payer_adress_1"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="payer_adress_2"></td>
+        </tr>
+      </tr>
+      <!-- PRODUCT TABLE -->
+      <tr class="heading">
+        <td>
+          Item
+        </td>
+        <td>
+          Price
+        </td>
+      </tr>
+      <tr class="item">
+        <td>
+          <span id="1_product"></span>
+        </td>
+        <td>
+          <span id="1_total"></span>
+        </td>
+      </tr>
+      <tr class="item">
+        <td>
+          <span id="2_product"></span>
+        </td>
+        <td>
+          <span id="2_total"></span>
+        </td>
+      </tr>
+      <tr class="item last">
+        <td>
+          <span id="3_product"></span>
+        </td>
+        <td>
+          <span id="3_total"></span>
+        </td>
+      </tr>
+      <!-- PRODUCT TABLE BOTTOM -->
+      <tr class="total">
+        <td></td>
+        <td>
+          <span id="total"></span>
+        </td>
+      </tr>
+    </table>
+    <!-- INVOICE BARCODE -->
+    <div style='padding-top:10px' id='barcode'></div>
+  </div>
+</body>
+
+</html>
